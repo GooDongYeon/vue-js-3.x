@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand navbar-light fixed-top">
+  <nav class="navbar navbar-expand">
     <div class="container">
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
@@ -49,5 +49,10 @@ ul {
 
 ul li {
   margin-right: 30px;
+}
+
+.navbar {
+  display: flex;
+  margin-left: 38%;
 }
 </style>

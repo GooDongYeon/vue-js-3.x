@@ -36,6 +36,7 @@
 
 <script setup>
 import { reactive } from 'vue'
+import axios from 'axios'
 
 const login_data = reactive({
   username: '',
@@ -69,20 +70,45 @@ const loginUser = () => {
     })
 }
 
-const tokenlogin = () => {
+// const tokenlogin = () => {
+//   console.log(login_data)
+//   const url = 'http://192.168.0.113:8080/login'
+//   const requestOptions = {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify(login_data)
+//   }
+//   fetch(url, requestOptions)
+//     .then(response => response.headers)
+//     .then(data => (console.log(data)))
+//     .catch(()=> {
+//       console.log('니 실패함')
+//     })
+// }
+
+
+const tokenlogin = async () => {
   console.log(login_data)
   const url = 'http://192.168.0.113:8080/login'
   const requestOptions = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(login_data)
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify(login_data),
+    credentials: 'include'
   }
-  fetch(url, requestOptions)
-    .then(response => response.json())
-    .then(data => (this.postId = data.id))
-    .catch(()=> {
-      console.log('니 실패함')
-    })
+  // try {
+  //   const res = await fetch(url, requestOptions)
+  //   console.log('json', res.json())
+  //   console.log('res', res)
+  //   document.cookie = 'Authorization=<token>'
+  //   console.log(document.cookie)
+  // } catch (error) {
+  //   console.log('실패', error)
+  // }
+  axios.post(url, requestOptions)
+  .then(res => {
+    console.log('json', res)
+  })
 }
 </script>
 
