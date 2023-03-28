@@ -12,9 +12,7 @@ import axios from 'axios'
 import { ref, onMounted } from 'vue'
 
 const user = ref(null)
-onMounted(() => {
-  created
-})
+
 const created = async () => {
   const response = await axios.get('user')
 
@@ -22,6 +20,9 @@ const created = async () => {
   user.value = response.data
 }
 
+onMounted(() => {
+  created()
+})
 </script>
 
 <style></style>

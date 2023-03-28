@@ -1,19 +1,19 @@
 
-import {createStore} from 'vuex'
+// import {createStore} from 'vuex'
 
-const store = createStore({
-    state() {
-        return {
-            account: {
-                id: 0
-            }
-        }
-    },
-    mutations: {
-        setAccount(state, payload) {
-            state.account.id = payload
-        }
-    }
-})
+// const store = createStore({
+//     state() {
+//         return {
+//             account: {
+//                 id: 0
+//             }
+//         }
+//     },
+//     mutations: {
+//         setAccount(state, payload) {
+//             state.account.id = payload
+//         }
+//     }
+// })
 
-export default store
+// export default store

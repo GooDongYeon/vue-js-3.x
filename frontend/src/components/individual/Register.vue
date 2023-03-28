@@ -69,12 +69,12 @@ const register_data = reactive({
 const handleSubmit = async () => {
   console.log('submit', register_data)
 
-  const response =  await axios.post('/register', register_data)
-  console.log(response)
+  await axios.post('/register', register_data)
   router.push('/login')
 } 
 
 
 </script>
 
-<style></style>
+<style>
+</style>

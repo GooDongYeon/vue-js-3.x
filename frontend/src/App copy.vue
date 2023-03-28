@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <Header />
   <RouterView />
   <Footer />
@@ -86,4 +86,4 @@ export default {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
-</style>
+</style> -->
