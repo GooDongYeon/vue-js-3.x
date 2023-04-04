@@ -47,10 +47,9 @@ const login_data = reactive({
   username: '',
   password: '',
 })
-
+const url = 'http://192.168.0.113:8080/api'
 const loginUser = () => {
   console.log(login_data)
-  const url = 'http://192.168.0.113:8080/login'
 
   var formBody = []
   for (var property in login_data) {
@@ -66,7 +65,7 @@ const loginUser = () => {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
     body: formBody
   }
-  fetch(url, requestOptions)
+  fetch(url+'/login', requestOptions)
     .then(response => response.headers)
     .then(data => (console.log('data : ', data)))
     .catch(error => {
@@ -76,7 +75,6 @@ const loginUser = () => {
 
 const tokenlogin = async () => {
   console.log(login_data)
-  const url = 'http://192.168.0.113:8080/api/login'
   const requestOptions = {
     method: 'POST',
     headers: {
@@ -96,13 +94,12 @@ const tokenlogin = async () => {
 }
 
 const userlogin = async () => {
-  const url = 'http://192.168.0.113:8080/api/user'
   const requestOptions = {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' }
   }
   try {
-    const res = await fetch(url, requestOptions)
+    const res = await fetch(url+'/user', requestOptions)
     console.log(res.json())
   } catch (error) {
     console.log('니 실패함', error)
