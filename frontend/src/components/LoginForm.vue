@@ -29,6 +29,12 @@
           @click.prevent="tokenlogin">
           token 로그인
         </button>
+
+        <button
+          type="submit"
+          @click.prevent="userlogin">
+          user 로그인
+        </button>
       </div>
     </form>
   </div>
@@ -36,12 +42,10 @@
 
 <script setup>
 import { reactive } from 'vue'
-import axios from 'axios'
 
 const login_data = reactive({
   username: '',
   password: '',
-  // password_confirm:''
 })
 
 const loginUser = () => {
@@ -63,52 +67,46 @@ const loginUser = () => {
     body: formBody
   }
   fetch(url, requestOptions)
-    .then(response => response.json())
-    .then(data => (this.postId = data.id))
-    .catch(() => {
-      console.log('니 실패함')
+    .then(response => response.headers)
+    .then(data => (console.log('data : ', data)))
+    .catch(error => {
+      console.log('니 실패함', error)
     })
 }
 
-// const tokenlogin = () => {
-//   console.log(login_data)
-//   const url = 'http://192.168.0.113:8080/login'
-//   const requestOptions = {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(login_data)
-//   }
-//   fetch(url, requestOptions)
-//     .then(response => response.headers)
-//     .then(data => (console.log(data)))
-//     .catch(()=> {
-//       console.log('니 실패함')
-//     })
-// }
-
-
 const tokenlogin = async () => {
   console.log(login_data)
-  const url = 'http://192.168.0.113:8080/login'
+  const url = 'http://192.168.0.113:8080/api/login'
   const requestOptions = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json'},
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Request-Headers': 'Authorization'
+    },
     body: JSON.stringify(login_data),
     credentials: 'include'
   }
-  // try {
-  //   const res = await fetch(url, requestOptions)
-  //   console.log('json', res.json())
-  //   console.log('res', res)
-  //   document.cookie = 'Authorization=<token>'
-  //   console.log(document.cookie)
-  // } catch (error) {
-  //   console.log('실패', error)
-  // }
-  axios.post(url, requestOptions)
-  .then(res => {
-    console.log('json', res)
-  })
+  try {
+    const res = await fetch(url, requestOptions)
+    console.log(res.headers)
+    console.log(res.headers['Authorization'])
+  } catch (error) {
+    console.log('니 실패함', error)
+  }
+}
+
+const userlogin = async () => {
+  const url = 'http://192.168.0.113:8080/api/user'
+  const requestOptions = {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
+  }
+  try {
+    const res = await fetch(url, requestOptions)
+    console.log(res.json())
+  } catch (error) {
+    console.log('니 실패함', error)
+  }
 }
 </script>
 

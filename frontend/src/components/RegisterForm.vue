@@ -51,7 +51,7 @@ const register_data = reactive({
 
 const registerUser = () => {
   console.log(register_data)
-  const url = 'http://192.168.0.113:8080/join'
+  const url = 'http://192.168.0.113:8080/api/join'
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -60,8 +60,8 @@ const registerUser = () => {
   fetch(url, requestOptions)
     .then(response => response.json())
     .then(data => (this.postId = data.id))
-    .catch(()=> {
-      console.log('니 실패함')
+    .catch(error => {
+      console.log('니 실패함', error)
     })
 }
 </script>
