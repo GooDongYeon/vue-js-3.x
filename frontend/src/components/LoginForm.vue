@@ -47,7 +47,7 @@ const login_data = reactive({
   username: '',
   password: '',
 })
-const url = 'http://192.168.0.113:8080/api'
+const url = 'http://192.168.0.113:9000/api'
 const loginUser = () => {
   console.log(login_data)
 

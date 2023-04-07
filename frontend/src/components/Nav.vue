@@ -1,32 +1,32 @@
 <template>
-  <nav class="navbar navbar-expand">
+  <nav class="navbar navbar-expand navbar-light fixed-top">
     <div class="container">
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link">user</a>
+            <router-link to="/home">
+              홈
+            </router-link>
           </li>
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link">admin</a>
+            <router-link to="/comparison">
+              비교
+            </router-link>
           </li>
           <li class="nav-item">
             <router-link to="/login">
-              login
+              로그인
             </router-link>
           </li>
           <li class="nav-item">
             <router-link to="/register">
-              register
+              회원가입
             </router-link>
           </li>
           <li class="nav-item">
             <a
               href="#"
-              class="nav-link">logout</a>
+              class="nav-link">커뮤니티</a>
           </li>
         </ul>
       </div>
@@ -35,11 +35,8 @@
 </template>
 
 <script setup>
-// import Login from './LoginForm.vue'
-// import Register from './RegisterForm.vue'
 
 </script>
-
 <style>
 ul {
   list-style: none;
@@ -50,9 +47,14 @@ ul {
 ul li {
   margin-right: 30px;
 }
-
 .navbar {
   display: flex;
-  margin-left: 38%;
+  margin-left: 35%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
 }
 </style>

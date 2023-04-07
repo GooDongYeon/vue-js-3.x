@@ -45,13 +45,12 @@ import { reactive } from 'vue'
 const register_data = reactive({
   username: '',
   email: '',
-  password:'',
-  // password_confirm:''
+  password:''
 })
 
 const registerUser = () => {
   console.log(register_data)
-  const url = 'http://192.168.0.113:8080/api/join'
+  const url = 'http://192.168.0.113:9000/api/join'
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
