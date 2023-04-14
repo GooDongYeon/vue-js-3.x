@@ -2,12 +2,12 @@
   <div class="contain">
     <div class="containgrid">
       <div>
-        <CompCID :cid="store.LEFT_CAR" />
+        <CompCID :cid="store.CarInfomation[0]" />
       </div>
       <div class="mid">
       </div>
       <div>
-        <CompCID :cid="store.RIGHT_CAR" />
+        <CompCID :cid="store.CarInfomation[1]" />
       </div>
     </div>
   </div>
@@ -16,19 +16,11 @@
 <script setup>
 import CompCID from '@/components/ComparCID.vue'
 import { useCompStore } from '@/store/index'
-import { onMounted } from 'vue'
 
 
 const store = useCompStore()
 
-const test = () => {
-  console.log(store.LEFT_CAR)
-  console.log('>>>>>>>>>', store.getleftcar())
-}
 
-onMounted(() => {
-  test()
-})
 </script>
 
 <style scoped>

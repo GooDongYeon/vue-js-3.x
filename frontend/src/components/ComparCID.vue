@@ -1,8 +1,10 @@
 <template>
   <div class="cidcontain">
     <div class="image-box">
-      <button v-if="!isimg">
-        추가하기 {{ isimg }}
+      <button
+        v-if="!isimg"
+        @click="goHome">
+        추가하기
       </button>
       <img
         v-if="isimg"
@@ -15,7 +17,18 @@
         요약
       </div>
       <div class="specinner">
-        요약 넣는곳
+        <!-- 가격 -->
+        <p class="costcolor">
+          {{ isNaN(Number(InfoData.specifications.cost))?'':Number(InfoData.specifications.cost).toLocaleString() }}
+        </p>
+        <!-- 차종 -->
+        <p>{{ InfoData.specifications.name }}</p>
+        <!-- 출시일 -->
+        <p>{{ '2023.04.14' }}</p>
+        <!-- 연료 -->
+        <p>{{ InfoData.specifications.engine }}</p>
+        <!-- 연비 -->
+        <p>{{ InfoData.specifications.fuel_efficiency }}</p>
       </div>
     </div>
     <div class="spec">
@@ -24,7 +37,20 @@
         제원
       </div>
       <div class="specinner">
-        제원 넣는곳
+        <!-- 전장/전폭 -->
+        <p>{{ ' 전장 / 전폭 ' }}</p>
+        <!-- 전고/축거 -->
+        <p>{{ ' 전고 / 축거 ' }}</p>
+        <!-- 윤거전/후 -->
+        <p>{{ ' 윤거전 / 윤거후 ' }}</p>
+        <!-- 배기량 -->
+        <p>{{ InfoData.specifications.capacity }}</p>
+        <!-- 구동박식 -->
+        <p>{{ ' 구동박식 ' }}</p>
+        <!-- 전륜서프펜션 -->
+        <p>{{ ' 전륜서스 ' }}</p>
+        <!-- 후륜서프펜션 -->
+        <p>{{ ' 후륜서스 ' }}</p>
       </div>
     </div>
     <div class="opt">
@@ -40,10 +66,14 @@
 </template>
 
 <script setup>
+import axios from 'axios'
+import router from '@/router'
 import { URL } from '@/components/global'
 import { onMounted, reactive, ref } from 'vue'
-import axios from 'axios'
 import { defineProps } from 'vue'
+import { useCompStore } from '@/store/index'
+
+const store = useCompStore()
 
 const props = defineProps({
   cid: Number
@@ -60,15 +90,22 @@ onMounted(() => {
 function getcid() {
   return props.cid
 }
-const InfoData = reactive({ // brands에 넣으면 된다 (for문)
-  specifications: {
-    imgurl: '/no.jpg',
+
+const goHome = () => {
+  if (store.CarInfomation[0] == '') {
+    // 홈 화면에서 시작하는 것이 아니라 비교화면에서 먼저 시작할때 왼쪽부터 채워넣기
+    store.CarInfomation[0] = InfoData.specifications
   }
+  router.push({ path: '/home' })
+}
+
+const InfoData = reactive({ // brands에 넣으면 된다 (for문)
+  specifications: []
 })
 
 const getInfo = async () => {
   console.log('id >>', props.cid)
-  if (props.cid == '') {
+  if (props.cid == '' || props.cid == undefined) {
     return
   } else {
     isimg.value = true
@@ -98,7 +135,6 @@ const getInfo = async () => {
   text-align: left;
   font-size: 20px;
   font-weight: bold;
-  text-decoration: underline;
   margin-bottom: 30px;
   margin-left: 10px;
 }
@@ -114,6 +150,14 @@ const getInfo = async () => {
 }
 
 hr {
-  border: 3px double black;
+  border: 2px solid black;
+}
+
+p {
+  min-width: 100px;
+  min-height: 30px;
+}
+.costcolor {
+  color: blue;
 }
 </style>

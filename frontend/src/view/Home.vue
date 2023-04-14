@@ -4,7 +4,7 @@
       src="../components/img/logo.jpg "
       alt="logo" />
     <h4>내차 찾기</h4>
- 
+
     <div class="container">
       <div class="inner">
         <!-- 브랜드 -->
@@ -69,6 +69,7 @@
         </select>
 
         <button
+          class="addbtn"
           type="button"
           @click="handover">
           추가
@@ -150,6 +151,7 @@ const getCar = async () => {
 const usecid = reactive({
   id: []
 })
+
 function getCid(e) {
   const get = e.target.value
   usecid.id = get
@@ -159,25 +161,33 @@ function getCid(e) {
 
 const handover = () => {
   console.log('성공? >> ', usecid.id)
-  store.selectleftcar(usecid.id)
-  console.log('LEFT_CID >>', store.LEFT_CAR)
-  router.push({path: '/comparison'})
+  store.getCarInfo(usecid.id)
+
+  if (store.RIGHT_CAR != undefined) {
+    console.log('CarInfomationL >> ', store.CarInfomation[1])
+  }
+  console.log('CarInfomationR >> ', store.CarInfomation[0])
+
+  router.push({ path: '/comparison' })
 }
 
 </script>
 
 <style scoped>
 .mainpage {
-  background-color: black;
   width: 100%;
   height: 100vh;
 }
+
 h4 {
-  color: white;
   font-weight: bold;
+  font-size: 32px;
+  color: lightsalmon;
 }
+
 .container {
-  border: 1px solid white;
+  border: 5px double lightcoral;
+  border-radius: 20px;
   width: 950px;
   height: 250px;
   transform: translate(40%);
@@ -185,7 +195,7 @@ h4 {
 }
 
 .inner {
-  width: 600px;
+  width: 650px;
   height: 70px;
   position: absolute;
   top: 50%;
@@ -211,5 +221,23 @@ h4 {
 img {
   width: 200px;
   height: 200px;
+  border: 3px dotted lightgreen;
+}
+
+.addbtn {
+  width: 80px;
+  height: 50px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: crimson;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+.addbtn:hover {
+  background-color: black;
+  color: white;
 }
 </style>
