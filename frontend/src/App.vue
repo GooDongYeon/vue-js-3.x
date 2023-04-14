@@ -7,8 +7,7 @@
   <RouterView />
 </template>
 <script setup>
-import Nav from '@/view/Nav.vue'
-
+import Nav from '@/components/Nav.vue'
 // import { useCountStore } from '@/store/index'
 
 // const store = useCountStore()

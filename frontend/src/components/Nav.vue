@@ -24,6 +24,11 @@
             </router-link>
           </li>
           <li class="nav-item">
+            <router-link to="/loginfrm">
+              New 로그인 폼
+            </router-link>
+          </li>
+          <li class="nav-item">
             <a
               href="#"
               class="nav-link">커뮤니티</a>
