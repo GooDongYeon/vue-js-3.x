@@ -3,11 +3,23 @@
     <section class="container forms">
       <div class="form login">
         <div class="form-content">
-          <header>Login</header>
+          <header>회원가입</header>
 
           <form action="#">
             <div class="field input-field">
-              <input type="id" class="input" placeholder="ID (아이디 또는 이메일)" />
+              <input type="text" class="input" placeholder="이름" />
+            </div>
+
+            <div class="field input-field">
+              <input type="text" class="input" placeholder="닉네임" />
+            </div>
+
+            <div class="field input-field">
+              <input type="id" class="input" placeholder="ID" />
+            </div>
+
+            <div class="field input-field">
+              <input type="email" class="input" placeholder="E-mail" />
             </div>
 
             <div class="field input-field">
@@ -15,19 +27,19 @@
               <font-awesome-icon :icon="['fas', 'eye-slash']" class="eye-slash" />
             </div>
 
-            <div class="form-link">
-              <a href="#" class="forgot-pass">아이디 찾기</a>
-              <a href="#" class="forgot-pass">비밀번호 찾기</a>
+            <div class="field input-field">
+              <input type="password" class="password" placeholder="비밀번호 확인" />
+              <font-awesome-icon :icon="['fas', 'eye-slash']" class="eye-slash" />
             </div>
 
             <div class="field button-field">
               <button>
-                로그인
+                회원가입
               </button>
             </div>
 
             <div class="form-link">
-              <span>회원이 아닌가요?</span> <a href="#" class="signup-link" @click="registerfrm">회원가입</a>
+              <span>이미 회원인가요?</span> <a href="#" class="login-link" @click="loginfrm">로그인 하기</a>
             </div>
           </form>
         </div>
@@ -57,15 +69,17 @@
         </div>
       </div>
     </section>
+
   </body>
 </template>
 
 <script setup>
-import router from '@/router'
+import router from '@/router';
 
-const registerfrm = () => {
-  router.push({ path: '/registerfrm' })
+const loginfrm = () => {
+  router.push({ path: '/loginfrm' })
 }
+
 </script>
 
 <style scoped>
@@ -244,5 +258,4 @@ a.naver {
   transform: translateY(-50%);
   background: url(https://rs.nxfs.nexon.com/nxlogin/images/set_logo.svg) no-repeat 0 -200px;
 }
-
 </style>
