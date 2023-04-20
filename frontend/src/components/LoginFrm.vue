@@ -7,17 +7,29 @@
 
           <form action="#">
             <div class="field input-field">
-              <input type="id" class="input" placeholder="ID (아이디 또는 이메일)" />
+              <input
+                type="id"
+                class="input"
+                placeholder="ID (아이디 또는 이메일)" />
             </div>
 
             <div class="field input-field">
-              <input type="password" class="password" placeholder="비밀번호" />
-              <font-awesome-icon :icon="['fas', 'eye-slash']" class="eye-slash" />
+              <input
+                type="password"
+                class="password"
+                placeholder="비밀번호" />
+              <font-awesome-icon
+                :icon="['fas', 'eye-slash']"
+                class="eye-slash" />
             </div>
 
             <div class="form-link">
-              <a href="#" class="forgot-pass">아이디 찾기</a>
-              <a href="#" class="forgot-pass">비밀번호 찾기</a>
+              <a
+                href="#"
+                class="forgot-pass">아이디 찾기</a>
+              <a
+                href="#"
+                class="forgot-pass">비밀번호 찾기</a>
             </div>
 
             <div class="field button-field">
@@ -27,7 +39,10 @@
             </div>
 
             <div class="form-link">
-              <span>회원이 아닌가요?</span> <a href="#" class="signup-link" @click="registerfrm">회원가입</a>
+              <span>회원이 아닌가요?</span> <a
+                href="#"
+                class="signup-link"
+                @click="registerfrm">회원가입</a>
             </div>
           </form>
         </div>
@@ -36,21 +51,27 @@
 
         <!-- 로그인 a => button으로 교환 -->
         <div class="media-options">
-          <a href="#" class="field facebook">
+          <a
+            href="#"
+            class="field facebook">
             <span class="facebook-icon"></span>
             <span>Facebook 로그인</span>
           </a>
         </div>
 
         <div class="media-options">
-          <a href="#" class="field google">
+          <a
+            href="#"
+            class="field google">
             <span class="google-icon"></span>
             <span>Google 로그인</span>
           </a>
         </div>
 
         <div class="media-options">
-          <a href="#" class="field naver">
+          <a
+            href="#"
+            class="field naver">
             <span class="naver-icon"></span>
             <span>NAVER 로그인</span>
           </a>

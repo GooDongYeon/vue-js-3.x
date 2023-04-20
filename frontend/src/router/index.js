@@ -4,6 +4,7 @@ import Login from '@/view/LoginForm.vue'
 import Register from '@/view/RegisterForm.vue'
 import LoginFrm from '@/components/LoginFrm.vue'
 import RegisterFrm from '@/components/RegisterFrm.vue'
+import Inquiry from '@/view/Toinquiry.vue'
 import { createRouter, createWebHistory } from 'vue-router/dist/vue-router'
 
 
@@ -14,6 +15,7 @@ const routes = [
   { path: '/register', component: Register },
   { path: '/loginfrm', component: LoginFrm },
   { path: '/registerfrm', component: RegisterFrm },
+  { path: '/inquiry', component: Inquiry },
 ]
 
 const router = createRouter({

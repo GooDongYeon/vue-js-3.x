@@ -29,9 +29,9 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link">커뮤니티</a>
+            <router-link to="/inquiry">
+              고객센터
+            </router-link>
           </li>
         </ul>
       </div>

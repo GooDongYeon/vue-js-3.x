@@ -7,29 +7,51 @@
 
           <form action="#">
             <div class="field input-field">
-              <input type="text" class="input" placeholder="이름" />
+              <input
+                type="text"
+                class="input"
+                placeholder="이름" />
             </div>
 
             <div class="field input-field">
-              <input type="text" class="input" placeholder="닉네임" />
+              <input
+                type="text"
+                class="input"
+                placeholder="닉네임" />
             </div>
 
             <div class="field input-field">
-              <input type="id" class="input" placeholder="ID" />
+              <input
+                type="id"
+                class="input"
+                placeholder="ID" />
             </div>
 
             <div class="field input-field">
-              <input type="email" class="input" placeholder="E-mail" />
+              <input
+                type="email"
+                class="input"
+                placeholder="E-mail" />
             </div>
 
             <div class="field input-field">
-              <input type="password" class="password" placeholder="비밀번호" />
-              <font-awesome-icon :icon="['fas', 'eye-slash']" class="eye-slash" />
+              <input
+                type="password"
+                class="password"
+                placeholder="비밀번호" />
+              <font-awesome-icon
+                :icon="['fas', 'eye-slash']"
+                class="eye-slash" />
             </div>
 
             <div class="field input-field">
-              <input type="password" class="password" placeholder="비밀번호 확인" />
-              <font-awesome-icon :icon="['fas', 'eye-slash']" class="eye-slash" />
+              <input
+                type="password"
+                class="password"
+                placeholder="비밀번호 확인" />
+              <font-awesome-icon
+                :icon="['fas', 'eye-slash']"
+                class="eye-slash" />
             </div>
 
             <div class="field button-field">
@@ -39,7 +61,10 @@
             </div>
 
             <div class="form-link">
-              <span>이미 회원인가요?</span> <a href="#" class="login-link" @click="loginfrm">로그인 하기</a>
+              <span>이미 회원인가요?</span> <a
+                href="#"
+                class="login-link"
+                @click="loginfrm">로그인 하기</a>
             </div>
           </form>
         </div>
@@ -48,33 +73,38 @@
 
         <!-- 로그인 a => button으로 교환 -->
         <div class="media-options">
-          <a href="#" class="field facebook">
+          <a
+            href="#"
+            class="field facebook">
             <span class="facebook-icon"></span>
             <span>Facebook 로그인</span>
           </a>
         </div>
 
         <div class="media-options">
-          <a href="#" class="field google">
+          <a
+            href="#"
+            class="field google">
             <span class="google-icon"></span>
             <span>Google 로그인</span>
           </a>
         </div>
 
         <div class="media-options">
-          <a href="#" class="field naver">
+          <a
+            href="#"
+            class="field naver">
             <span class="naver-icon"></span>
             <span>NAVER 로그인</span>
           </a>
         </div>
       </div>
     </section>
-
   </body>
 </template>
 
 <script setup>
-import router from '@/router';
+import router from '@/router'
 
 const loginfrm = () => {
   router.push({ path: '/loginfrm' })
