@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&family=Poor+Story&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.replybox {
+  width: 700px;
+  min-height: 300px;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  position: relative;
+}
+
+.replybox .nickname {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #dbdbdb;
+  margin: 50px;
+}
+
+textarea {
+  position: absolute;
+  resize: none;
+  border: 1px solid #dbdbdb;
+  padding: 0px 10px 0 10px;
+  font-size: 13px;
+  height: 40px;
+  line-height: 38px;
+  color: #333;
+  display: flex;
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  width: 80%;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+textarea:focus {
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 0 10px -5px #bebebe;
+}
+

@@ -33,6 +33,11 @@
               고객센터
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/reply">
+              댓글
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -42,7 +47,7 @@
 <script setup>
 
 </script>
-<style>
+<style scoped>
 ul {
   list-style: none;
   display: flex;
@@ -52,14 +57,28 @@ ul {
 ul li {
   margin-right: 30px;
 }
-.navbar {
-  display: flex;
-  margin-left: 35%;
-}
 
-a {
-  text-decoration: none;
-  color: black;
-  margin-right: 15px;
+.container {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 40px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  transform: translate(50% 50%);
 }
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    transform: translate(50% 50%);
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+  }
 </style>
