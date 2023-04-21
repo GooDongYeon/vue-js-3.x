@@ -8,6 +8,8 @@ import RegisterFrm from '@/components/RegisterFrm.vue'
 import Inquiry from '@/view/Toinquiry.vue'
 import Reply from '@/view/ToReply.vue'
 
+import GetReply from '@/components/PostReply.vue'
+
 
 const routes = [
   { path: '/home', component: Home },
@@ -18,6 +20,8 @@ const routes = [
   { path: '/registerfrm', component: RegisterFrm },
   { path: '/inquiry', component: Inquiry },
   { path: '/reply', component: Reply },
+
+  { path: '/postreply', component: GetReply },
 ]
 
 const router = createRouter({

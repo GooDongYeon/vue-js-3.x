@@ -38,6 +38,11 @@
               댓글
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/postreply">
+              TEST POST
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
