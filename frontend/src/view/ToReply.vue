@@ -1,11 +1,28 @@
 <template>
   <div class="wrap">
+    <div class="countreply">
+      <button
+        class="icons"
+        @click="good">
+        <font-awesome-icon
+          :icon="['far', 'heart']"
+          :class="{hearticons:isRed}" />
+      </button> 좋아요
+      <div class="icons">
+        <font-awesome-icon
+          :icon="['far', 'comment-dots']" 
+          class="replyicons" /> 
+      </div>
+      댓글 {{ form?.replyCount }}
+    </div>
+    <hr style="color: #bebebe; width: 100%;" />
+    <br />
+
     <div class="reply-title">
       <h3>
         댓글
       </h3>
     </div>
-
     <div
       ref="contArea"
       class="reply-container">
@@ -34,13 +51,20 @@
         :key="reply"
         class="innerText">
         <div class="inneruser">
-          {{ reply?.user?.username }}
-        </div>
-        <div class="createDate">
-          {{ reply?.formattedCreatedDate }}
+          {{ reply?.user?.nickname }}({{ reply?.user?.username }})
         </div>
         <div class="innercontent">
           {{ reply?.text }}
+        </div>
+        <div class="innerCreate">
+          <div class="createDate">
+            {{ reply?.formattedCreatedDate }}
+          </div>
+          <div class="reBtn">
+            <button @click="writeReply">
+              답글쓰기
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -57,6 +81,8 @@ const text = ref('')
 const textArea = ref()
 const contArea = ref()
 const forms = ref([])
+
+const isRed = ref(false)
 
 // 댓글 저장
 const reply_data = reactive({
@@ -87,7 +113,7 @@ const addreply = () => {
 
 // 댓글 바인딩
 const form = ref('')
-const bno = 37
+const bno = 1
 
 const state = reactive({
   nickname: '닉네임',
@@ -95,27 +121,34 @@ const state = reactive({
   createdDate: '',
 })
 
+// 댓글요청
 const getreply = () => {
   console.log(state)
   axios.get(URL + `/board/view/${bno}`)
-  .then((res) => {
-    console.log('받은데이터', res.data)
-    form.value = res.data
-    console.log(form.value.replies[3].text)
-    console.log(form.value.writerDto.username)
-  })
-  .catch(()=>{
-    console.log('해당 게시물에 댓글은 없습니다.')
-  })
+    .then((res) => {
+      console.log('받은데이터', res.data)
+      form.value = res.data
+      // console.log(form.value.replies[3].text)
+      // console.log(form.value.writerDto.username)
+    })
+    .catch(() => {
+      console.log('해당 게시물에 댓글은 없습니다.')
+    })
+}
+
+// 답글요청
+const writeReply = () => {
 
 }
+
 onMounted(() => {
   getreply()
 })
 
+// 댓글창 조건
 function checkRows() {
   const element = document.querySelector('textarea')
-  const maxWidth = 450
+  const maxWidth = 500
   // const lineHeight = parseInt(getComputedStyle(element).lineHeight, 10)
   const maxLines = 3
   const maxChars = Math.floor(maxWidth / (getComputedStyle(element).fontSize.slice(0, -2) * 0.6))
@@ -147,8 +180,13 @@ function checkRows() {
   contArea.value.style.height = (12 + contArea.value.scrollHeight) + 'px'
 }
 
+function good() {
+  isRed.value = !isRed.value
+}
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&family=Poor+Story&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import '@/assets/reply.css';
+
 </style>

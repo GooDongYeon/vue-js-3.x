@@ -1,3 +1,4 @@
+
 .reply-title {
   width: 100%;
   height: 30px;
@@ -27,7 +28,7 @@
 
 textarea {
   resize: none;
-  width: 100%;
+  /* width: 100%; */
   height: 45px;
   border: 1px solid #dbdbdb;
   padding: 0px 10px 0 10px;
@@ -55,6 +56,8 @@ button {
   border: none;
   background: none;
   color: #bebebe;
+  margin-left: 15px;
+  cursor: pointer;
 }
 
 /* 댓글공간 */
@@ -62,17 +65,54 @@ button {
   width: 100%;
   height: 100vh;
   border: 1px solid #bebebe;
+  border-radius: 6px;
   margin-top: 20px;
   padding: 20px;
+  
 }
 
 .innerText {
   width: 100%;
-  height: 150px;
-  border: 1px solid blue;
-  margin-bottom: 5px;
+  height: 100px;
+  border: 1px solid #bebebe;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-family: 'Poppins','sans-serif'
 }
 
 .innerText .createDate {
   color: #bebebe;
+}
+.innercontent {
+  font-family: 'Poppins','sans-serif' 
+}
+
+.reply-content {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.innerCreate {
+  display: flex;
+}
+
+.icon {
+  background: black;
+}
+
+.countreply {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  margin-left: 5px;
+}
+.replyicons {
+  margin-left: 10px;
+}
+.icons {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.hearticons {
+  color: red;
 }
