@@ -8,12 +8,14 @@
     </router-link>
   </div>
   <Nav2 />
+  <Slider />
   <RouterView />
 </template>
 
 <script setup>
 import User from '@/components/Userpage.vue'
 import Nav2 from '@/components/NewNav.vue'
+import Slider from '@/components/swiperslider.vue'
 </script>
 
 <style scoped>

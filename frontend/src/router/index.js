@@ -12,6 +12,7 @@ import GetReply from '@/components/PostReply.vue'
 import UserTest from '@/components/Userpage.vue'
 import MainTest from '@/view/MainPageFrm.vue'
 import NavTest from '@/components/NewNav.vue'
+import SlideTest from '@/components/swiperslider.vue'
 
 const routes = [
   { path: '/home', component: Home },
@@ -28,6 +29,7 @@ const routes = [
   { path: '/userpage', component: UserTest, name: 'muserage' },
   { path: '/testpage', component: MainTest, name: 'mainpage' },
   { path: '/testnav', component: NavTest, name: 'navbar' },
+  { path: '/testslide', component: SlideTest, name: 'testslide' },
 ]
 
 const router = createRouter({
