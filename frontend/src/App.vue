@@ -1,13 +1,15 @@
 <template>
-  <Nav />
+  <!-- <Nav /> -->
   <!-- {{ store.count }}
   <button @click="store.increment">
     증가
   </button> -->
+  <testpage />
   <RouterView />
 </template>
 <script setup>
-import Nav from '@/components/Nav.vue'
+// import Nav from '@/components/Nav.vue'
+import testpage from '@/view/MainPageFrm.vue'
 // import { useCountStore } from '@/store/index'
 
 // const store = useCountStore()
@@ -20,7 +22,7 @@ import Nav from '@/components/Nav.vue'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 Nav {

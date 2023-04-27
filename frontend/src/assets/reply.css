@@ -1,4 +1,3 @@
-
 .reply-title {
   width: 100%;
   height: 30px;
@@ -51,7 +50,7 @@ textarea:focus {
   padding-right: 20px;
 }
 
-button {
+button { 
   float: right;
   border: none;
   background: none;
@@ -63,12 +62,12 @@ button {
 /* 댓글공간 */
 .reply-content {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   border: 1px solid #bebebe;
   border-radius: 6px;
   margin-top: 20px;
   padding: 20px;
-  
+
 }
 
 .innerText {
@@ -77,14 +76,15 @@ button {
   border: 1px solid #bebebe;
   border-radius: 6px;
   margin-bottom: 10px;
-  font-family: 'Poppins','sans-serif'
+  font-family: 'Poppins', 'sans-serif'
 }
 
 .innerText .createDate {
   color: #bebebe;
 }
+
 .innercontent {
-  font-family: 'Poppins','sans-serif' 
+  font-family: 'Poppins', 'sans-serif'
 }
 
 .reply-content {
@@ -106,13 +106,23 @@ button {
   text-align: left;
   margin-left: 5px;
 }
+
 .replyicons {
   margin-left: 10px;
 }
+
 .icons {
   font-size: 16px;
   margin-right: 5px;
 }
+
 .hearticons {
   color: red;
+}
+
+/* 수정/삭제 버튼 */
+.inneredit {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
 }

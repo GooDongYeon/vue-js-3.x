@@ -7,9 +7,11 @@ import LoginFrm from '@/components/LoginFrm.vue'
 import RegisterFrm from '@/components/RegisterFrm.vue'
 import Inquiry from '@/view/Toinquiry.vue'
 import Reply from '@/view/ToReply.vue'
-
 import GetReply from '@/components/PostReply.vue'
 
+import UserTest from '@/components/Userpage.vue'
+import MainTest from '@/view/MainPageFrm.vue'
+import NavTest from '@/components/NewNav.vue'
 
 const routes = [
   { path: '/home', component: Home },
@@ -20,8 +22,12 @@ const routes = [
   { path: '/registerfrm', component: RegisterFrm },
   { path: '/inquiry', component: Inquiry },
   { path: '/reply', component: Reply },
-
   { path: '/postreply', component: GetReply },
+  
+  
+  { path: '/userpage', component: UserTest, name: 'muserage' },
+  { path: '/testpage', component: MainTest, name: 'mainpage' },
+  { path: '/testnav', component: NavTest, name: 'navbar' },
 ]
 
 const router = createRouter({

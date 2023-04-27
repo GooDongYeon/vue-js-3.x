@@ -6,12 +6,12 @@
         @click="good">
         <font-awesome-icon
           :icon="['far', 'heart']"
-          :class="{hearticons:isRed}" />
+          :class="{ hearticons: isRed }" />
       </button> 좋아요
       <div class="icons">
         <font-awesome-icon
-          :icon="['far', 'comment-dots']" 
-          class="replyicons" /> 
+          :icon="['far', 'comment-dots']"
+          class="replyicons" />
       </div>
       댓글 {{ form?.replyCount }}
     </div>
@@ -65,6 +65,16 @@
               답글쓰기
             </button>
           </div>
+        </div>
+        <div class="inneredit">
+          <button class="replyedit">
+            수정
+          </button>
+          <button
+            class="replyedit"
+            @click="removereply">
+            삭제
+          </button>
         </div>
       </div>
     </div>
@@ -126,7 +136,7 @@ const getreply = () => {
   console.log(state)
   axios.get(URL + `/board/view/${bno}`)
     .then((res) => {
-      console.log('받은데이터', res.data)
+      console.log('요청받은 데이터', res.data)
       form.value = res.data
       // console.log(form.value.replies[3].text)
       // console.log(form.value.writerDto.username)
@@ -136,9 +146,22 @@ const getreply = () => {
     })
 }
 
-// 답글요청
-const writeReply = () => {
-
+const rno = 13
+// 댓글삭제
+const removereply = async () => {
+  if (confirm('삭제하시겠습니까?')) {
+    await axios.delete(URL + `/reply/delete/${rno}`)
+      .then((res) => {
+        console.log('댓글삭제 데이터', res.data)
+        form.value = res.data
+        console.log('해당게시글이 삭제되었습니다.')
+        router.push({ path: 'reply' })
+        window.location.reload(true)
+      })
+      .catch(() => {
+        console.log('해당 댓글을 삭제할 수 없습니다.')
+      })
+  }
 }
 
 onMounted(() => {
@@ -188,5 +211,4 @@ function good() {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&family=Poor+Story&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import '@/assets/reply.css';
-
 </style>
