@@ -50,14 +50,14 @@ textarea:focus {
   padding-right: 20px;
 }
 
-button { 
+/* button { 
   float: right;
   border: none;
   background: none;
   color: #bebebe;
   margin-left: 15px;
   cursor: pointer;
-}
+} */
 
 /* 댓글공간 */
 .reply-content {

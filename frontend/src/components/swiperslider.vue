@@ -1,151 +1,164 @@
 <template>
   <div class="container-md">
     <swiper
-      ref="swiperRef"
       :style="{
         '--swiper-navigation-color': '#fff',
         '--swiper-pagination-color': '#fff',
       }"
       :autoplay="{
-        delay: 5000,
+        delay: 1000,
         disableOnInteraction: false,
       }"
       :modules="modules"
       effect="fade"
-      :slides-per-view="1"
+      :slides-per-view="3"
+      :space-between="20"
       :speed="1200"
       navigation
       :parallax="true"
       :pagination="{ clickable: true }"
       :scrollbar="{ draggable: true }"
-      :slide-change="onSlideChange">
-      <swiper-slide
-        v-for="image in images"
-        :key="image"
-        class="wrap-swiper">
+      :slide-change="onSlideChange"
+      @swiper="onSwiper">
+      <swiper-slide class="wrap-swiper">
         <div
           class="title"
           data-swiper-parallax="-200">
-          {{ image.title }}<br /><br />
+          Becoming One in Love<br />
+          Growing Leaders<br />
+          Helping People to Serve God<br /><br />
+          <div class="subtitle">
+            We Are OICA
+          </div>
+        </div>
+
+        <img
+          src="../assets/swiper/bmw.jpg"
+          alt=""
+          class="swiper-img" />
+      </swiper-slide>
+      <swiper-slide class="wrap-swiper">
+        <div
+          class="title"
+          data-swiper-parallax="-200">
+          사랑으로 하나되는 학교 <br />
+          리더를 세워가는 학교 <br />
+          섬김으로 봉사하는 학교 <br /><br />
+          <div class="subtitle">
+            우리는 OICA입니다
+          </div>
+        </div>
+        <img
+          src="../assets/swiper/그랜져.jpg"
+          alt=""
+          class="swiper-img" />
+      </swiper-slide>
+      <swiper-slide class="wrap-swiper">
+        <div
+          class="title"
+          data-swiper-parallax="-200">
+          Growing Global Leaders<br />
+          in God's Words. <br /><br />
           <div class="subtitle">
             We Are OICA
           </div>
         </div>
         <img
-          :src="image.src"
+          src="../assets/swiper/멕라렌.png"
+          alt=""
+          class="swiper-img" />
+      </swiper-slide>
+      <swiper-slide class="wrap-swiper">
+        <div
+          class="title"
+          data-swiper-parallax="-200">
+          하나님 말씀 안에서<br />
+          글로벌 리더 양성<br /><br />
+          <div class="subtitle">
+            우린 OICA입니다
+          </div>
+        </div>
+        <img
+          src="../assets/swiper/스팅어.png"
           alt=""
           class="swiper-img" />
       </swiper-slide>
     </swiper>
-    <div class="button-container">
-      <div
-        class="prev-button"
-        @click="onPrevClick">
-      </div>
-      <div
-        class="next-button"
-        @click="onNextClick">
-      </div>
-    </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
 import { Navigation, Pagination, Scrollbar, EffectFade, Autoplay, Parallax } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import 'swiper/css/effect-fade'
 
-const swiperRef = ref(null)
+const onSwiper = (swiper) => {
+  console.log(swiper)
+}
 
 const onSlideChange = () => {
   console.log('slide change')
 }
-
-const onPrevClick = () => {
-  if (swiperRef.value) {
-    swiperRef.value.slidePrev()
-  }
-}
-
-const onNextClick = () => {
-  if (swiperRef.value) {
-    swiperRef.value.slideNext()
-  }
-}
-
-const images = reactive([
-  {
-    title: 'Becoming One in Love\nGrowing Leaders\nHelping People to Serve God',
-    src: '../swiper/bmw.jpg',
-  },
-  {
-    title: '사랑으로 하나되는 학교\n리더를 세워가는 학교\n섬김으로 봉사하는 학교',
-    src: '../swiper/그랜져.jpg',
-  },
-  {
-    title: 'Growing Global Leaders\nin God\'s Words.',
-    src: '../swiper/멕라렌.png',
-  },
-  {
-    title: '하나님 말씀 안에서\n글로벌 리더 양성',
-    src: '../swiper/스팅어.png',
-  },
-])
 
 const modules = [Navigation, Pagination, Scrollbar, EffectFade, Autoplay, Parallax]
 </script>
 
 <style scoped>
 .container-md {
-  max-width: 960px;
+  max-width: 1020px;
   margin: 0 auto;
+  margin-top: 10px;
   padding: 0 15px;
 }
-
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+.wrap-swiper {
+  position: relative;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 }
 
-.prev-button,
-.next-button {
-  border: none;
-  background-color: transparent;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-  transition: color 0.2s ease-in-out;
-}
-
-.prev-button:hover,
-.next-button:hover {
-  color: #ccc;
-}
-
-.swiper-img {
+.wrap-swiper img {
+  filter: brightness(40%);
+  z-index: 1;
   width: 100%;
+  height: 600px;
 }
 
-.title {
-  font-size: 3rem;
-  line-height: 1.2;
-  font-weight: bold;
-  text-align: center;
-  color: #fff;
-  margin-top: 80px;
-  margin-bottom: 40px;
+.wrap-swiper .title {
+  font-size: 30px;
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 10%;
+  color: white;
 }
 
-.subtitle {
-  font-size: 2rem;
-  font-weight: normal;
-  margin-top: 20px;
-  color: rgba(255, 255, 255, 0.8);
+.wrap-swiper .title .subtitle {
+  font-size: 30px;
+  /* position: absolute; */
+  color: white;
 }
+
+/* @media (max-width: 1000px) {
+  .wrap-swiper .title {
+    font-size: 25px;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    left: 15%;
+  }
+
+  .wrap-swiper .title .subtitle {
+    font-size: 20px;
+    position: absolute;
+    color: white;
+  }
+
+  .wrap-swiper img {
+    width: 800px;
+  }
+} */
 </style>
