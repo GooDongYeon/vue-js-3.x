@@ -39,9 +39,7 @@
 </template>
 
 <script setup>
-const videoUrl1 = 'https://www.youtube.com/embed/DFbMMuALDPQ'
-const videoUrl2 = 'https://www.youtube.com/embed/_krw6RILcm0'
-const videoUrl3 = 'https://www.youtube.com/embed/piB5XgJwUN8'
+// 메모장에서 키코드 복사
 </script>
 
 <style scoped>
