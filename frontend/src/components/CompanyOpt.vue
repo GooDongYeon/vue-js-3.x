@@ -5,7 +5,7 @@
         * <span class="s-text">제조사</span>를 선택하세요
       </p>
       <div class="domestic">
-        국산차
+        전체
       </div>
       <div class="brand-text">
         <button
@@ -63,6 +63,7 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&family=Poor+Story&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import '@/assets/Opt.css';
+
 .comp-text {
   width: 100%;
   margin: 10px;

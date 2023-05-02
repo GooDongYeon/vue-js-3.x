@@ -57,13 +57,14 @@
   color: black;
   font-size: 14px;
   font-weight: 600;
-  text-align: center;
+  text-align: start;
   cursor: pointer;
   display: inline-block;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 5px;
 }
 
 .news1-tag:hover,

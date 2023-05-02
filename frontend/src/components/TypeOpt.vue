@@ -1,9 +1,12 @@
 <template>
   <div class="opt-container">
     <div class="comp-text">
-      <p class="p-text-t">
-        전체
+      <p class="p-text">
+        * <span class="s-text">차종</span>를 선택하세요
       </p>
+      <div class="domestic">
+        전체
+      </div>
       <div class="brand-text">
         <button
           v-for="segment in getData.segments"

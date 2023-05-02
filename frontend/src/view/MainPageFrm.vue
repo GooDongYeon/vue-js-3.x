@@ -15,6 +15,8 @@
     <Selected />
     <!-- 신차뉴스 / 리뷰 -->
     <News />
+    <!-- 동영상 -->
+    <Vedio />
   </div>
   <!-- <RouterView /> -->
 </template>
@@ -22,9 +24,10 @@
 <script setup>
 import User from '@/components/Userpage.vue'
 import Nav2 from '@/components/NewNav.vue'
-import Slider from '@/components/swiperslider.vue'
+import Slider from '@/components/ToSwiperslider.vue'
 import Selected from '@/components/NewSelect.vue'
 import News from '@/components/ToNews.vue'
+import Vedio from '@/components/ToVideo.vue'
 
 </script>
 
@@ -34,6 +37,6 @@ import News from '@/components/ToNews.vue'
 
 .main-container {
   width: 100%;
-  height: 150vh;
+  height: 250vh;
 }
 </style>

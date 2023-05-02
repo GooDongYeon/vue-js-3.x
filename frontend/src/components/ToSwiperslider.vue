@@ -11,8 +11,8 @@
       }"
       :modules="modules"
       effect="fade"
-      :slides-per-view="3"
-      :space-between="20"
+      :slides-per-view="1"
+      :space-between="50"
       :speed="1200"
       navigation
       :parallax="true"
@@ -119,7 +119,7 @@ const modules = [Navigation, Pagination, Scrollbar, EffectFade, Autoplay, Parall
 
 <style scoped>
 .container-md {
-  max-width: 1250px;
+  max-width: 1150px;
   margin: 0 auto;
   margin-top: 10px;
   padding: 0 15px;
@@ -135,7 +135,7 @@ const modules = [Navigation, Pagination, Scrollbar, EffectFade, Autoplay, Parall
   filter: brightness(65%);
   z-index: 1;
   width: 100%;
-  height: 600px;
+  height: 500px;
 }
 
 .wrap-swiper .title {
