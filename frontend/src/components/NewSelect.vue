@@ -42,10 +42,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
+import { useCompStore } from '@/store/index'
+import router from '@/router'
 import optC from '@/components/CompanyOpt.vue'
 import optT from '@/components/TypeOpt.vue'
 import optM from '@/components/ModelOpt.vue'
+
 
 const isOpt = ref(0)
 
@@ -74,6 +77,29 @@ const changeEvent_t = (changeText) => {
 const changeEvent_m = (changeText) => {
   m_text.value = changeText
   isOpt.value = 0
+}
+
+const usecid = reactive({
+  id: []
+})
+const store = useCompStore()
+
+// function getCid(e) {
+//   const get = e.target.value
+//   usecid.id = get
+//   console.log('cid', get)
+// }
+
+const postBtn = () => {
+  console.log('cid >> ', usecid)
+  store.getCarInfo(usecid.id)
+
+  if (store.RIGHT_CAR != undefined) {
+    console.log('CarInfomationL >> ', store.CarInfomation[1])
+  }
+  console.log('CarInfomationR >> ', store.CarInfomation[0])
+
+  router.push({ path: '/comparison' })
 }
 </script>
 

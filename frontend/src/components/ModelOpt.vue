@@ -1,7 +1,7 @@
 <template>
   <div class="opt-container">
     <div class="comp-text">
-      <p class="p-text">
+      <p class="p-text-m">
         전체
       </p>
       <div class="brand-text">

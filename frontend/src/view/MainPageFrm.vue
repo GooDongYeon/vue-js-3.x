@@ -9,8 +9,12 @@
       </router-link>
     </div>
     <Nav2 />
-    <Slider />
+    <!-- 슬라이더 -->
+    <Slider /> 
+    <!-- 차량비교 -->
     <Selected />
+    <!-- 신차뉴스 / 리뷰 -->
+    <News />
   </div>
   <!-- <RouterView /> -->
 </template>
@@ -20,6 +24,7 @@ import User from '@/components/Userpage.vue'
 import Nav2 from '@/components/NewNav.vue'
 import Slider from '@/components/swiperslider.vue'
 import Selected from '@/components/NewSelect.vue'
+import News from '@/components/ToNews.vue'
 
 </script>
 

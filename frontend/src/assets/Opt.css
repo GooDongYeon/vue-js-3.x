@@ -6,6 +6,7 @@
   display: flex;
   margin: 0 auto;
   background: white;
+  position: relative;
 }
 
 .comp-text {
@@ -19,7 +20,8 @@
   font-family: 'Poppins', sans-serif;
   padding: 10px
 }
-.p-text-t {
+.p-text-t,
+.p-text-m {
   display: flex;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
