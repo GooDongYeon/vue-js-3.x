@@ -2,7 +2,7 @@
   <div class="main-container">
     <User />
     <div class="logo">
-      <router-link to="/">
+      <router-link to="/testpage">
         <img
           src="@/components/img/logo2.png"
           alt="" />
@@ -18,7 +18,6 @@
     <!-- 동영상 -->
     <Vedio />
   </div>
-  <!-- <RouterView /> -->
 </template>
 
 <script setup>
@@ -37,6 +36,6 @@ import Vedio from '@/components/ToVideo.vue'
 
 .main-container {
   width: 100%;
-  height: 250vh;
+  height: 200vh;
 }
 </style>

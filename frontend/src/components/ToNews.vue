@@ -115,8 +115,7 @@
 
 .wrap {
   width: 100%;
-  height: 650px;
-  margin-top: 20px;
+  height: 600px;
 }
 
 .tonews-warp,

@@ -12,8 +12,7 @@ import GetReply from '@/components/PostReply.vue'
 import UserTest from '@/components/Userpage.vue'
 import MainTest from '@/view/MainPageFrm.vue'
 import NavTest from '@/components/NewNav.vue'
-// import SlideTest from '@/components/ToSwiperslider.vue'
-// import SelectTest from '@/components/NewSelect.vue'
+import Information from '@/components/NewInformation.vue'
 
 
 const routes = [
@@ -31,9 +30,8 @@ const routes = [
   { path: '/userpage', component: UserTest, name: 'userpage' },
   { path: '/testpage', component: MainTest, name: 'mainpage' },
   { path: '/testnav', component: NavTest, name: 'navbar' },
-  // { path: '/testslide', component: SlideTest, name: 'testslide' },
+  { path: '/testinfo', component: Information, name: 'testinfo' },
 
-  // { path: '/testselect', component: SelectTest, name: 'testselect' },
 ]
 
 const router = createRouter({
